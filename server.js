@@ -73,33 +73,35 @@ router.post('/signup', function(req, res) {
     }
 });
 
-router.post('/movies', function(req, res) {
-    if (!req.body.username || !req.body.password) {
-        res.json({success: false, message: 'Please pass username and password.'});
-    }
-    else {
-        var movie = new Movie();
-        movie.title = req.body.title;
-        movie.year = req.body.year;
-        movie.genre = req.body.genre;
-        movie.actor_char_1 = req.body.actor_char_1;
-        movie.actor_char_2 = req.body.actor_char_2;
-        movie.actor_char_3 = req.body.actor_char_3;
+router.route('/movies')
+    .post(authJwtController.isAuthenticated, function (req, res) {
 
-        // save the user
-        movie.save(function(err) {
-            if (err) {
-                // duplicate entry
-                if (err.code === 11000)
-                    return res.json({ success: false, message: 'A movie with that title already exists. '});
-                else
-                    return res.send(err);
-            }
+        if (!req.body.title || !req.body.year) {
+            res.json({success: false, message: 'Please Title, year, genre, and three actor/character combinations.'});
+        } else {
+            var movie = new Movie();
+            movie.title = req.body.title;
+            movie.year = req.body.year;
+            movie.genre = req.body.genre;
+            movie.actor_char_1 = req.body.actor_char_1;
+            movie.actor_char_2 = req.body.actor_char_2;
+            movie.actor_char_3 = req.body.actor_char_3;
 
-            res.json({ success: true, message: 'Movie created!' });
-        });
-    }
-});
+            // save the user
+            movie.save(function (err) {
+                if (err) {
+                    // duplicate entry
+                    if (err.code === 11000)
+                        return res.json({success: false, message: 'A movie with that title already exists. '});
+                    else
+                        return res.send(err);
+                }
+
+                res.json({success: true, message: 'Movie created!'});
+            });
+        }
+    });
+
 
 
 router.post('/signin', function(req, res) {
