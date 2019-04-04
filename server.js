@@ -79,7 +79,7 @@ router.route('/movies')
         if (!req.body.title || !req.body.year || !req.body.genre) {
             if(!req.body.actor_1 || !req.body.actor_2 || !req.body.actor_3){
                 if(!req.body.character_1|| !req.body.character_2|| !req.body.character_3){
-                    res.json({success: false, message: 'Please Title, year, genre, and three actor/character combinations.'});
+                    res.json({success: false, message: 'Please submit Title, year, genre, and three actor/character combinations.'});
                 }
             }
         } else {
@@ -102,8 +102,16 @@ router.route('/movies')
                 res.json({success: true, message: 'Movie created!'});
             });
         }
-    });
+    })
 
+    .delete(authJwtController.isAuthenticated, function (req, res) {
+        var title = req.params.title;
+        Movie.remove({title:title}, function(err, movie) {
+            if (err) res.send(err);
+            res.json({success: true, message: 'Movie deleted!'});
+        });
+
+    });
 
 
 router.post('/signin', function(req, res) {
