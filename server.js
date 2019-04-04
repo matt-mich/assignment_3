@@ -76,16 +76,18 @@ router.post('/signup', function(req, res) {
 router.route('/movies')
     .post(authJwtController.isAuthenticated, function (req, res) {
 
-        if (!req.body.title || !req.body.year) {
-            res.json({success: false, message: 'Please Title, year, genre, and three actor/character combinations.'});
+        if (!req.body.title || !req.body.year || !req.body.genre) {
+            if(!req.body.actor_1 || !req.body.actor_2 || !req.body.actor_3){
+                if(!req.body.character_1|| !req.body.character_2|| !req.body.character_3){
+                    res.json({success: false, message: 'Please Title, year, genre, and three actor/character combinations.'});
+                }
+            }
         } else {
             var movie = new Movie();
             movie.title = req.body.title;
             movie.year = req.body.year;
             movie.genre = req.body.genre;
-            movie.actor_char_1 = req.body.actor_char_1;
-            movie.actor_char_2 = req.body.actor_char_2;
-            movie.actor_char_3 = req.body.actor_char_3;
+            movie.actors = [[req.body.actor_1,req.body.character_1],[req.body.actor_2,req.body.character_2],[req.body.actor_3,req.body.character_3]];
 
             // save the user
             movie.save(function (err) {
