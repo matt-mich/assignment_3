@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9ee19f9-cc16-478b-9ef6-92d5d45bbb3c" name="Default" comment="Add movie delete">
+    <list default="true" id="d9ee19f9-cc16-478b-9ef6-92d5d45bbb3c" name="Default" comment="Adding final tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
@@ -19,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="771">
-              <caret line="155" column="96" selection-start-line="155" selection-start-column="96" selection-end-line="155" selection-end-column="96" />
+            <state relative-caret-position="981">
+              <caret line="148" column="17" selection-start-line="148" selection-start-column="17" selection-end-line="148" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -111,6 +111,7 @@
     <findStrings>
       <find>find</find>
       <find>actor_</find>
+      <find>genre</find>
     </findStrings>
     <replaceStrings>
       <replace>character_</replace>
@@ -230,7 +231,7 @@
       <workItem from="1554410336478" duration="599000" />
       <workItem from="1554415872792" duration="599000" />
       <workItem from="1554595316925" duration="1198000" />
-      <workItem from="1554835584876" duration="1647000" />
+      <workItem from="1554835584876" duration="2927000" />
     </task>
     <task id="LOCAL-00001" summary="Initialization">
       <created>1554322416792</created>
@@ -288,30 +289,44 @@
       <option name="project" value="LOCAL" />
       <updated>1554406018865</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Adding final tests">
+      <created>1554860918063</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1554860918063</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Adding final tests">
+      <created>1554861748266</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1554861748266</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46027000" />
+    <option name="totallyTimeSpent" value="47307000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1371" y="-8" width="1357" height="1791" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49462366" visible="true" weight="0.1584084" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49487555" visible="true" weight="0.1584084" />
       <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="npm" order="2" sideWeight="0.50537634" side_tool="true" visible="true" weight="0.1584084" />
+      <window_info id="npm" order="2" sideWeight="0.50512445" side_tool="true" visible="true" weight="0.1584084" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39034566" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.39034566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.26842684" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32924336" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.18609408" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.18593563" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.15494637" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -327,7 +342,8 @@
     <MESSAGE value="Push to restart heroku" />
     <MESSAGE value="Add movie post" />
     <MESSAGE value="Add movie delete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add movie delete" />
+    <MESSAGE value="Adding final tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding final tests" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/db.js" />
@@ -409,8 +425,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="771">
-          <caret line="155" column="96" selection-start-line="155" selection-start-column="96" selection-end-line="155" selection-end-column="96" />
+        <state relative-caret-position="981">
+          <caret line="148" column="17" selection-start-line="148" selection-start-column="17" selection-end-line="148" selection-end-column="17" />
         </state>
       </provider>
     </entry>

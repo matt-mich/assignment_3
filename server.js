@@ -109,44 +109,45 @@ router.route('/movies')
         } else {
 
             User.findOne({username:req.body.title}).exec(function(err,movie){
-                if (err)
-                    return res.send(err);
+                if(movie != null){
+                    if (err) res.send(err);
 
-                if(req.body.year){
-                    movie.year = req.body.year;
-                }
-
-                if(req.body.genre){
-                    movie.genre = req.body.genre;
-                }
-
-                if(req.body.actor_1){
-                    movie.actors[0][0] = req.body.actor_1;
-                }
-                if(req.body.actor_2){
-                    movie.actors[1][0] = req.body.actor_2;
-                }
-                if(req.body.actor_3){
-                    movie.actors[2][0] = req.body.actor_3;
-                }
-
-                if(req.body.character_1){
-                    movie.actors[0][1] = req.body.character_1;
-                }
-                if(req.body.character_2){
-                    movie.actors[1][1] = req.body.character_2;
-                }
-                if(req.body.character_3){
-                    movie.actors[2][1] = req.body.character_3;
-                }
-
-                movie.save(function(err){
-                    if (err) {
-                            return res.send(err);
+                    if(req.body.year){
+                        movie.year = req.body.year;
                     }
-                    res.json({success: true, message: 'Movie updated!'});
-                });
 
+                    if(req.body.genre){
+                        movie.genre = req.body.genre;
+                    }
+
+                    if(req.body.actor_1){
+                        movie.actors[0][0] = req.body.actor_1;
+                    }
+                    if(req.body.actor_2){
+                        movie.actors[1][0] = req.body.actor_2;
+                    }
+                    if(req.body.actor_3){
+                        movie.actors[2][0] = req.body.actor_3;
+                    }
+                    if(req.body.character_1){
+                        movie.actors[0][1] = req.body.character_1;
+                    }
+                    if(req.body.character_2){
+                        movie.actors[1][1] = req.body.character_2;
+                    }
+                    if(req.body.character_3){
+                        movie.actors[2][1] = req.body.character_3;
+                    }
+
+                    movie.save(function(err){
+                        if (err) {
+                            return res.send(err);
+                        }
+                        res.json({success: true, message: 'Movie updated!'});
+                    });
+                }else{
+
+                }
             });
         }
     })
