@@ -165,10 +165,11 @@ router.route('/movies')
         if (!req.body.title){
             res.json({success: false, message: 'Please submit title of the movie you wish to find.'});
         } else {
-            var title = req.params.title;
-            Movie.findOne({title:title}, function(err, movie) {
+            var title_query = req.params.title;
+
+            Movie.findOne({title:title_query}, function (err, movie) {
                 if (err) res.send(err);
-                res.json({success: true, message: movie});
+                res.json({success: true, message: JSON.stringify(movie)});
             });
         }
     });
