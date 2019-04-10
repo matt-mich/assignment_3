@@ -19,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="772">
-              <caret line="158" column="13" selection-start-line="158" selection-start-column="13" selection-end-line="158" selection-end-column="13" />
+            <state relative-caret-position="183">
+              <caret line="76" column="125" selection-start-line="76" selection-start-column="125" selection-end-line="76" selection-end-column="125" />
             </state>
           </provider>
         </entry>
@@ -234,7 +234,7 @@
       <workItem from="1554410336478" duration="599000" />
       <workItem from="1554415872792" duration="599000" />
       <workItem from="1554595316925" duration="1198000" />
-      <workItem from="1554835584876" duration="6495000" />
+      <workItem from="1554835584876" duration="9815000" />
     </task>
     <task id="LOCAL-00001" summary="Initialization">
       <created>1554322416792</created>
@@ -362,11 +362,25 @@
       <option name="project" value="LOCAL" />
       <updated>1554868750552</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Adding final tests">
+      <created>1554869070625</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1554869070625</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Adding final tests">
+      <created>1554869301159</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1554869301159</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50875000" />
+    <option name="totallyTimeSpent" value="54195000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1371" y="-8" width="1357" height="1791" extended-state="6" />
@@ -486,8 +500,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="772">
-          <caret line="158" column="13" selection-start-line="158" selection-start-column="13" selection-end-line="158" selection-end-column="13" />
+        <state relative-caret-position="183">
+          <caret line="76" column="125" selection-start-line="76" selection-start-column="125" selection-end-line="76" selection-end-column="125" />
         </state>
       </provider>
     </entry>
