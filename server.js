@@ -107,8 +107,8 @@ router.route('/movies')
         if (!req.body.title){
             res.json({success: false, message: 'Please submit title of the movie you wish to update.'});
         } else {
-
-            User.findOne({username:req.body.title}).exec(function(err,movie){
+            var title = req.params.title;
+            User.findOne({title:title},function(err,movie){
                 if(movie != null){
                     if (err) res.send(err);
 
@@ -140,13 +140,12 @@ router.route('/movies')
                     }
 
                     movie.save(function(err){
-                        if (err) {
-                            return res.send(err);
-                        }
+                        if (err) res.send(err);
+
                         res.json({success: true, message: 'Movie updated!'});
                     });
                 }else{
-
+                    res.json({success: false, message: 'Failed to find movie!'});
                 }
             });
         }
