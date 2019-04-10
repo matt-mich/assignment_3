@@ -75,7 +75,6 @@ router.post('/signup', function(req, res) {
 
 router.route('/movies')
     .post(authJwtController.isAuthenticated, function (req, res) {
-
         if (!req.body.title || !req.body.year || !req.body.genre) {
             if(!req.body.actor_1 || !req.body.actor_2 || !req.body.actor_3){
                 if(!req.body.character_1|| !req.body.character_2|| !req.body.character_3){
@@ -95,6 +94,66 @@ router.route('/movies')
                     // duplicate entry
                     if (err.code === 11000)
                         return res.json({success: false, message: 'A movie with that title already exists. '});
+                    else
+                        return res.send(err);
+                }
+
+                res.json({success: true, message: 'Movie created!'});
+            });
+        }
+    })
+
+    .put(authJwtController.isAuthenticated, function (req, res) {
+        if (!req.body.title){
+            res.json({success: false, message: 'Please submit title of the movie you wish to update.'});
+        } else {
+            var movie = new Movie();
+
+            if(req.body.year){
+                movie.year = req.body.title;
+            }else{
+                movie.year = null;
+            }
+
+            if(req.body.genre){
+                movie.genre = req.body.genre;
+            }else{
+                movie.genre = null;
+            }
+
+            movie.actors = [[null,null],[null,null],[null,null]];
+
+            if(req.body.actor_1){
+                movie.actors[0][0] = req.body.actor_1;
+            }
+            if(req.body.actor_2){
+                movie.actors[1][0] = req.body.actor_2;
+            }
+            if(req.body.actor_3){
+                movie.actors[2][0] = req.body.actor_3;
+            }
+
+            if(req.body.character_1){
+                movie.actors[0][1] = req.body.character_1;
+            }
+            if(req.body.character_2){
+                movie.actors[1][1] = req.body.character_2;
+            }
+            if(req.body.character_3){
+                movie.actors[2][1] = req.body.character_3;
+            }
+
+
+            movie.year = req.body.year;
+            movie.genre = req.body.genre;
+            movie.actors = [[req.body.actor_1,req.body.character_1],[req.body.actor_2,req.body.character_2],[req.body.actor_3,req.body.character_3]];
+
+            // save the user
+            movie.update(function (err) {
+                if (err) {
+                    // duplicate entry
+                    if (err.code === 11000)
+                        return res.json({success: false, message: 'No movie of that title exists. '});
                     else
                         return res.send(err);
                 }
