@@ -20,4 +20,4 @@ MovieSchema.pre('save', function(next) {
 });
 
 // return the model
-module.exports = mongoose.model('Movie', MovieSchema);
+module.exports = mongoose.model('Movie', MovieSchema,'movies');
