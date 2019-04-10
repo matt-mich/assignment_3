@@ -33,8 +33,6 @@ router.route('/users/:userId')
         var id = req.params.userId;
         User.findById(id, function(err, user) {
             if (err) res.send(err);
-
-            var userJson = JSON.stringify(user);
             // return that user
             res.json(user);
         });
@@ -141,7 +139,6 @@ router.route('/movies')
 
                     movie.save(function(err){
                         if (err) res.send(err);
-
                         res.json({success: true, message: 'Movie updated!'});
                     });
                 }else{
@@ -168,11 +165,10 @@ router.route('/movies')
         if (!req.body.title){
             res.json({success: false, message: 'Please submit title of the movie you wish to find.'});
         } else {
-
             var title = req.params.title;
             Movie.find({title:title}, function(err, movie) {
                 if (err) res.send(err);
-                res.json(movie);
+                res.json(movie.title);
             });
         }
     });
