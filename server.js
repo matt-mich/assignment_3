@@ -169,7 +169,7 @@ router.route('/movies')
             console.log(req.body.title);
             Movie.findOne({title:title_query}, function (err, movie) {
                 if (err) res.send(err);
-                res.json({success: true, message: JSON.stringify(movie)});
+                res.json({success: true, message: movie});
             });
         }
     });
