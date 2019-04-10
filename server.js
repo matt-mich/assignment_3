@@ -105,8 +105,8 @@ router.route('/movies')
         if (!req.body.title){
             res.json({success: false, message: 'Please submit title of the movie you wish to update.'});
         } else {
-            var title = req.params.title;
-            Movie.findOne({title:req.params.title},function(err,movie){
+            var title = req.body.title;
+            Movie.findOne({title:title},function(err,movie){
                 if(movie != null){
                     if (err) res.send(err);
 
@@ -153,7 +153,7 @@ router.route('/movies')
             res.json({success: false, message: 'Please submit title of the movie you wish to delete.'});
         } else {
 
-            var title = req.params.title;
+            var title = req.body.title;
             Movie.remove({title:title}, function(err, movie) {
                 if (err) res.send(err);
                 res.json({success: true, message: 'Movie deleted!'});
@@ -165,10 +165,9 @@ router.route('/movies')
         if (!req.body.title){
             res.json({success: false, message: 'Please submit title of the movie you wish to find.'});
         } else {
-            var title_query = req.params.title;
-            console.log(req.params.title);
+            var title_query = req.body.title;
+            console.log(req.body.title);
             Movie.findOne({title:title_query}, function (err, movie) {
-                console.log(movie);
                 if (err) res.send(err);
                 res.json({success: true, message: JSON.stringify(movie)});
             });
